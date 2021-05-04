@@ -6,12 +6,12 @@ namespace ChatSendBoxComponent.Views.Components.Chat
     public partial class ParentComponent
     {
         [Inject]
-        IJSRuntime JsRuntime { get; set; }
+        private IJSRuntime JsRuntime { get; set; }
 
-        string message;
-        ChatSendBox chatSendBox;
+        private string message;
+        private ChatSendBox chatSendBox;
 
-        void OnClick()
+        private void OnClick()
         {
             JsRuntime.InvokeAsync<object>("alert", new[] { message });
             message = "";
